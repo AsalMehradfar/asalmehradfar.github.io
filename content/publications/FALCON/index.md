@@ -62,6 +62,12 @@ links:
     url: https://github.com/AsalMehradfar/FALCON
   - type: dataset
     url: https://github.com/AsalMehradfar/FALCON/tree/main/dataset
+  - type: poster
+    name: NeurIPS
+    url: https://neurips.cc/virtual/2025/poster/118890
+  - type: source
+    name: OpenReview
+    url: https://openreview.net/forum?id=HUUQmnwUIx
   # - type: slides
   #   url: https://www.slideshare.net/
   # - type: source
