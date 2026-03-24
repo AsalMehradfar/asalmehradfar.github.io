@@ -7,7 +7,7 @@ authors:
 - Jose Miguel Hernandez-Lobato
 - Glen S. Kwon
 - Mahdi Soltanolkotabi
-- alman Avestimehr
+- Salman Avestimehr
 - Morteza Rasoulianboroujeni
 
 author_notes:
