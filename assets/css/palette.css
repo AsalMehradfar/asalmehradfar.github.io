@@ -1,0 +1,223 @@
+/* Centralized site-wide palette override.
+   Light, selective pastel spectrum inspired by the original website:
+   clean neutral pages, atmospheric heroes, and faint alternating sections. */
+
+:root {
+  --color-bg: #fbfcff;
+  --color-bg-alt: #f6f8fc;
+  --color-bg-card: rgba(255, 255, 255, 0.96);
+  --color-bg-code: #f0f4fa;
+  --color-text: #182136;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-text-subtle: #8994a8;
+  --color-text-inverse: #ffffff;
+  --color-accent: #4d6fb3;
+  --color-accent-hover: #38578f;
+  --color-accent-muted: #b7c8e8;
+  --color-accent-light: #edf3ff;
+  --color-border: #dfe6f0;
+  --color-border-light: #edf1f6;
+  --color-shadow: rgba(34, 55, 92, 0.055);
+  --color-shadow-md: rgba(34, 55, 92, 0.10);
+
+  /* Intentionally very light pastel spectrum. */
+  --spectrum-blue: rgba(115, 173, 255, 0.13);
+  --spectrum-cyan: rgba(105, 222, 218, 0.09);
+  --spectrum-violet: rgba(174, 144, 255, 0.10);
+  --spectrum-rose: rgba(255, 174, 203, 0.075);
+  --spectrum-gold: rgba(255, 217, 145, 0.065);
+}
+
+[data-theme="dark"] {
+  --color-bg: #101827;
+  --color-bg-alt: #151f31;
+  --color-bg-card: rgba(24, 36, 57, 0.96);
+  --color-bg-code: #111d30;
+  --color-text: #f3f6fb;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #9eacc0;
+  --color-text-subtle: #74839a;
+  --color-text-inverse: #101827;
+  --color-accent: #91b7ef;
+  --color-accent-hover: #b5cef3;
+  --color-accent-muted: #526f98;
+  --color-accent-light: #1c3150;
+  --color-border: #2b3a52;
+  --color-border-light: #223047;
+  --color-shadow: rgba(0, 0, 0, 0.20);
+  --color-shadow-md: rgba(0, 0, 0, 0.34);
+
+  --spectrum-blue: rgba(74, 132, 218, 0.13);
+  --spectrum-cyan: rgba(54, 174, 180, 0.075);
+  --spectrum-violet: rgba(129, 96, 201, 0.09);
+  --spectrum-rose: rgba(181, 87, 132, 0.045);
+  --spectrum-gold: rgba(190, 142, 70, 0.035);
+}
+
+html,
+body {
+  background-color: var(--color-bg) !important;
+}
+
+/* Keep the general page neutral and calm. The spectrum is applied selectively. */
+body {
+  background-image: none !important;
+  color: var(--color-text) !important;
+}
+
+main,
+.page-main,
+.site-main {
+  background: var(--color-bg) !important;
+}
+
+/* Normal sections stay clean. */
+section {
+  background-color: transparent;
+}
+
+/* Faint atmospheric treatment for alternate sections only. */
+.section-alt,
+.bg-alt,
+.page-section--alt,
+.research-area:nth-of-type(even) {
+  background-color: var(--color-bg-alt) !important;
+  background-image:
+    radial-gradient(circle at 8% 18%, var(--spectrum-blue) 0, transparent 26rem),
+    radial-gradient(circle at 90% 22%, var(--spectrum-violet) 0, transparent 24rem),
+    radial-gradient(circle at 70% 92%, var(--spectrum-cyan) 0, transparent 22rem) !important;
+}
+
+/* Cards remain nearly opaque and readable. */
+.card,
+.project-card,
+.publication-card,
+.pub-item,
+.news-item,
+.award-card,
+.service-card,
+.experience-card,
+.research-card,
+.paper-card,
+.bibtex-card,
+.abstract-card,
+.content-card {
+  background: var(--color-bg-card) !important;
+  border-color: var(--color-border) !important;
+  box-shadow: 0 7px 24px var(--color-shadow);
+  backdrop-filter: blur(6px);
+}
+
+/* Header is clean and lightly translucent. */
+.site-header,
+header.site-header,
+.navbar,
+.main-nav {
+  background: color-mix(in srgb, var(--color-bg-card) 94%, transparent) !important;
+  border-color: var(--color-border) !important;
+  backdrop-filter: blur(16px);
+}
+
+.site-footer,
+footer {
+  background: var(--color-bg-alt) !important;
+  border-color: var(--color-border) !important;
+}
+
+/* Accent consistency. */
+a,
+.text-accent,
+.section-eyebrow,
+.page-eyebrow,
+.project-link,
+.news-link,
+.pub-link {
+  color: var(--color-accent);
+}
+
+a:hover,
+.project-link:hover,
+.news-link:hover,
+.pub-link:hover {
+  color: var(--color-accent-hover);
+}
+
+.btn-primary,
+.button-primary,
+.filter-btn.active {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover,
+.button-primary:hover {
+  background: var(--color-accent-hover) !important;
+  border-color: var(--color-accent-hover) !important;
+}
+
+.btn-secondary,
+.button-secondary,
+.badge,
+.tag,
+.keyword {
+  border-color: var(--color-accent-muted) !important;
+}
+
+/* The pastel spectrum is concentrated in hero/page-header areas. */
+.hero,
+.page-header,
+.research-hero,
+.publications-hero,
+.experience-hero,
+.service-hero,
+.news-hero {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-bg) !important;
+  overflow: hidden;
+}
+
+.hero::before,
+.page-header::before,
+.research-hero::before,
+.publications-hero::before,
+.experience-hero::before,
+.service-hero::before,
+.news-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 15%, var(--spectrum-blue), transparent 34%),
+    radial-gradient(circle at 86% 16%, var(--spectrum-violet), transparent 33%),
+    radial-gradient(circle at 72% 88%, var(--spectrum-cyan), transparent 30%),
+    radial-gradient(circle at 28% 90%, var(--spectrum-rose), transparent 28%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-bg) 97%, transparent), color-mix(in srgb, var(--color-bg-alt) 82%, transparent));
+}
+
+/* Optional very light spectrum wash for explicitly highlighted sections. */
+.spectrum-section,
+.section-spectrum {
+  background-color: var(--color-bg-alt) !important;
+  background-image:
+    radial-gradient(circle at 10% 20%, var(--spectrum-blue), transparent 28rem),
+    radial-gradient(circle at 88% 20%, var(--spectrum-violet), transparent 27rem),
+    radial-gradient(circle at 65% 90%, var(--spectrum-cyan), transparent 24rem) !important;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .card,
+  .project-card,
+  .publication-card,
+  .pub-item,
+  .news-item,
+  .site-header,
+  .navbar,
+  .main-nav {
+    backdrop-filter: none;
+  }
+}
