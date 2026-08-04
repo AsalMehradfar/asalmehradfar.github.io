@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Publications — Asal Mehradfar</title>
+<!-- Browser tab icon: add website-icon.png to assets/icons/ -->
+<link href="assets/icons/website-icon.png" rel="icon" type="image/png"/>
+<link href="assets/icons/website-icon.png" rel="apple-touch-icon"/>
+<meta content="Complete list of publications by Asal Mehradfar, Ph.D. candidate at USC. Research in AI for analog circuits, drug delivery, generative AI, LLMs, and financial systems." name="description"/>
+<!-- Open Graph -->
+<meta content="Publications — Asal Mehradfar" property="og:title"/>
+<meta content="Complete publication list: AI for circuits, drug delivery, generative AI, LLMs, and finance." property="og:description"/>
+<meta content="website" property="og:type"/>
+<!-- Theme flash prevention — must be first script in <head> -->
+<script>
+    (function() {
+      var stored = localStorage.getItem('theme');
+      var preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', preferred);
+    })();
+  </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    /* =========================================================
+       DESIGN TOKENS — mirrors assets/css/styles.css
+       ========================================================= */
+    :root {
+      --color-bg:            #F8FAFC;
+      --color-bg-alt:        #F1F5F9;
+      --color-bg-card:       #FFFFFF;
+      --color-bg-code:       #E8EEF5;
+      --color-bg-overlay:    rgba(15, 23, 42, 0.55);
+      --color-accent:        #315E9B;
+      --color-accent-hover:  #244A7C;
+      --color-accent-light:  #E8F0FA;
+      --color-accent-muted:  #5F83B5;
+      --color-text:          #172033;
+      --color-text-secondary:#475569;
+      --color-text-muted:    #64748B;
+      --color-text-inverse:  #F8FAFC;
+      --color-border:        #DCE3EC;
+      --color-border-strong: #C4CEDA;
+      --color-link:          #315E9B;
+      --color-link-hover:    #244A7C;
+      --color-focus-ring:    #315E9B;
+      --font-sans: 'Inter', 'Manrope', 'Source Sans 3', 'IBM Plex Sans', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'IBM Plex Mono', 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
+      --radius-sm:  4px;
+      --radius-md:  8px;
+      --radius-lg:  12px;
+      --shadow-sm:  0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md:  0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+      --nav-height: 64px;
+      --transition: 200ms ease;
+    }
+
+    [data-theme="dark"] {
+      --color-bg:            #0F172A;
+      --color-bg-alt:        #162033;
+      --color-bg-card:       #1B273B;
+      --color-bg-code:       #223047;
+      --color-bg-overlay:    rgba(0, 0, 0, 0.72);
+      --color-accent:        #7FA9E6;
+      --color-accent-hover:  #A5C4F2;
+      --color-accent-light:  #3A1820;
+      --color-accent-muted:  #5F83B5;
+      --color-text:          #F1F5F9;
+      --color-text-secondary:#C4BDB6;
+      --color-text-muted:    #94A3B8;
+      --color-text-inverse:  #172033;
+      --color-border:        #2A3A52;
+      --color-border-strong: #3A4D68;
+      --color-link:          #7FA9E6;
+      --color-link-hover:    #A5C4F2;
+      --color-focus-ring:    #7FA9E6;
+    }
+
+    /* =========================================================
+       RESET & BASE
+       ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color var(--transition), color var(--transition);
+    }
+    main { flex: 1; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--color-link); text-decoration: none; }
+    a:hover { color: var(--color-link-hover); }
+    ul { list-style: none; }
+
+    /* =========================================================
+       SKIP LINK
+       ========================================================= */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--color-accent);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* =========================================================
+       NAVIGATION
+       ========================================================= */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1.2;
+    }
+    .nav-logo-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+      letter-spacing: -0.01em;
+    }
+    .nav-logo-tagline {
+      font-size: 0.7rem;
+      color: var(--color-text-muted);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      padding: 0.375rem 0.625rem;
+      border-radius: var(--radius-sm);
+      transition: color var(--transition), background var(--transition);
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: var(--color-text); background: var(--color-bg-alt); }
+    .nav-links a.active { color: var(--color-accent); font-weight: 600; }
+    .nav-links a.nav-cv {
+      border: 1.5px solid var(--color-border-strong);
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-sm);
+      color: var(--color-text);
+    }
+    .nav-links a.nav-cv:hover { border-color: var(--color-accent); color: var(--color-accent); background: transparent; }
+
+    /* Theme toggle */
+    .theme-toggle {
+      background: none;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--color-text-secondary);
+      transition: border-color var(--transition), color var(--transition), background var(--transition);
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .theme-toggle:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+    .icon-sun, .icon-moon { width: 18px; height: 18px; }
+    [data-theme="light"] .icon-moon { display: none; }
+    [data-theme="dark"]  .icon-sun  { display: none; }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--color-text);
+      flex-shrink: 0;
+    }
+    .nav-hamburger:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+
+    /* Mobile drawer */
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: var(--color-bg-overlay);
+    }
+    .nav-mobile.open { display: block; }
+    .nav-mobile-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(320px, 85vw);
+      height: 100%;
+      background: var(--color-bg);
+      border-left: 1px solid var(--color-border);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      overflow-y: auto;
+    }
+    .nav-mobile-close {
+      align-self: flex-end;
+      background: none;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+    }
+    .nav-mobile-panel a {
+      display: block;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      padding: 0.75rem 0.5rem;
+      border-bottom: 1px solid var(--color-border);
+      text-decoration: none;
+    }
+    .nav-mobile-panel a:hover, .nav-mobile-panel a.active { color: var(--color-accent); }
+
+    /* =========================================================
+       PAGE HEADER
+       ========================================================= */
+    .page-header {
+      background: var(--color-bg-alt);
+      border-bottom: 1px solid var(--color-border);
+      padding: 3rem 1.5rem 2.5rem;
+    }
+    .page-header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .page-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.75rem;
+    }
+    .page-title {
+      font-size: clamp(1.875rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .page-subtitle {
+      font-size: 1.0625rem;
+      color: var(--color-text-secondary);
+      max-width: 640px;
+      line-height: 1.6;
+    }
+    .equal-contrib-note {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      font-style: italic;
+    }
+
+    /* =========================================================
+       PUBLICATION FILTERS
+       ========================================================= */
+    .pub-filters-wrap {
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: var(--nav-height);
+      z-index: 50;
+    }
+    .pub-filters {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .pub-filters-label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-right: 0.25rem;
+    }
+    .filter-btn {
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      padding: 0.375rem 0.875rem;
+      border-radius: 100px;
+      border: 1.5px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .filter-btn:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: var(--color-accent-light);
+    }
+    .filter-btn.active {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+    .filter-btn:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+
+    /* Screen-reader live region */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* =========================================================
+       PUBLICATIONS LIST
+       ========================================================= */
+    .pub-list-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* Year group */
+    .pub-year-group {
+      margin-bottom: 3rem;
+    }
+    .pub-year-group[hidden] { display: none; }
+    .pub-year-heading {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--color-text);
+      letter-spacing: -0.01em;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--color-accent);
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+
+    /* Individual publication entry */
+    .pub-entry {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--color-border);
+      transition: opacity var(--transition);
+    }
+    .pub-entry[hidden] { display: none; }
+    .pub-entry:last-child { border-bottom: none; }
+
+    .pub-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Category badge */
+    .pub-badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .pub-badge-circuits   { background: #EBF3FF; color: #1D4ED8; }
+    .pub-badge-drug       { background: #ECFDF5; color: #065F46; }
+    .pub-badge-genai      { background: #FDF4FF; color: #7E22CE; }
+    .pub-badge-llms       { background: #FFF7ED; color: #C2410C; }
+    .pub-badge-finance    { background: #FFFBEB; color: #92400E; }
+    [data-theme="dark"] .pub-badge-circuits   { background: #1E3A5F; color: #93C5FD; }
+    [data-theme="dark"] .pub-badge-drug       { background: #064E3B; color: #6EE7B7; }
+    [data-theme="dark"] .pub-badge-genai      { background: #3B0764; color: #D8B4FE; }
+    [data-theme="dark"] .pub-badge-llms       { background: #431407; color: #FED7AA; }
+    [data-theme="dark"] .pub-badge-finance    { background: #451A03; color: #FDE68A; }
+
+    .pub-venue {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      font-style: italic;
+    }
+
+    .pub-title {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+    .pub-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .pub-title a:hover { color: var(--color-accent); }
+
+    .pub-authors {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      line-height: 1.55;
+    }
+    .pub-authors strong { color: var(--color-text); font-weight: 600; }
+    .pub-authors .equal-star {
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: 0.85em;
+      vertical-align: super;
+    }
+
+    /* Resource buttons row */
+    .pub-resources {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.25rem;
+    }
+    .btn-resource {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 0.3rem 0.7rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .btn-resource:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: var(--color-accent-light);
+    }
+    .btn-resource:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+    .btn-resource svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    /* Cite button (triggers modal) */
+    .btn-cite {
+      border-color: var(--color-accent-muted);
+      color: var(--color-accent);
+    }
+    .btn-cite:hover {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
+    }
+
+    /* =========================================================
+       BIBTEX MODAL
+       ========================================================= */
+    .bibtex-modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: var(--color-bg-overlay);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .bibtex-modal-backdrop.open {
+      display: flex;
+    }
+    .bibtex-modal {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      width: 100%;
+      max-width: 640px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .bibtex-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .bibtex-modal-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+    .bibtex-modal-close {
+      background: none;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--color-text-muted);
+      transition: all var(--transition);
+    }
+    .bibtex-modal-close:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .bibtex-modal-close:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+    .bibtex-modal-body {
+      padding: 1.25rem 1.5rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .bibtex-code {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      background: var(--color-bg-code);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      white-space: pre;
+      overflow-x: auto;
+      color: var(--color-text);
+      tab-size: 2;
+    }
+    .bibtex-modal-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+    }
+    .btn-copy-bibtex {
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      background: var(--color-accent);
+      color: #fff;
+      cursor: pointer;
+      transition: background var(--transition);
+      min-width: 120px;
+    }
+    .btn-copy-bibtex:hover { background: var(--color-accent-hover); }
+    .btn-copy-bibtex:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+    .btn-copy-bibtex.copied { background: #2D6A4F; }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    .site-footer {
+      background: var(--color-bg-alt);
+      border-top: 1px solid var(--color-border);
+      padding: 2.5rem 1.5rem;
+      margin-top: auto;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      text-align: center;
+    }
+    .footer-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .footer-tagline {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      margin-top: 0.125rem;
+    }
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text-muted);
+      transition: all var(--transition);
+    }
+    .footer-social a:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .footer-social svg { width: 18px; height: 18px; }
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1rem;
+      justify-content: center;
+    }
+    .footer-nav a {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .footer-nav a:hover { color: var(--color-accent); }
+    .footer-copy {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .pub-filters-wrap { top: var(--nav-height); }
+      .pub-list-section { padding: 1.5rem 1rem 3rem; }
+      .page-header { padding: 2rem 1rem 1.75rem; }
+    }
+    @media (max-width: 430px) {
+      .pub-filters { gap: 0.375rem; }
+      .filter-btn { font-size: 0.75rem; padding: 0.3rem 0.65rem; }
+      .pub-title { font-size: 1rem; }
+      .pub-authors { font-size: 0.85rem; }
+    }
+    @media (max-width: 375px) {
+      .pub-year-heading { font-size: 1.125rem; }
+    }
+
+    /* =========================================================
+       FOCUS STATES
+       ========================================================= */
+    :focus-visible {
+      outline: 2px solid var(--color-focus-ring);
+      outline-offset: 2px;
+    }
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+<link href="assets/css/palette.css" rel="stylesheet"/>
+<link href="assets/css/clean-page-hero.css" rel="stylesheet"/><style data-filter-content-alignment-final="true">
+/*
+  Final Publications filter alignment:
+  the filter controls align with the publication list they control.
+*/
+.pub-filters-wrap {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.pub-filters-container {
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: 1rem 1.5rem !important;
+  box-sizing: border-box !important;
+}
+
+.pub-filters {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 600px) {
+  .pub-filters-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+</style><style data-equal-contribution-end="true">
+/* Equal-contribution footnote at the end of the publication list */
+.equal-contrib-note--end {
+  margin: 0.75rem 0 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.84rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+</style><style data-venue-visibility-fix="true">
+/* Subtle venue emphasis without changing layout */
+.pub-venue{
+    font-weight:500 !important;
+    color:var(--color-text-secondary, #4b5563) !important;
+}
+</style></head>
+<body><site-header></site-header>
+<!-- Skip link -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<!-- ===================== NAVIGATION ===================== -->
+<!-- Mobile nav drawer -->
+<!-- ===================== MAIN ===================== -->
+<main id="main-content">
+<!-- Page header -->
+<header class="page-header clean-page-hero">
+<div class="page-header-inner clean-page-hero__inner">
+<p class="page-eyebrow clean-page-hero__eyebrow">Publications</p>
+<h1 class="page-title clean-page-hero__title">Research Publications</h1>
+<p class="page-subtitle clean-page-hero__description">Peer-reviewed publications and research manuscripts spanning AI-driven circuit design, lipid nanoparticle engineering, generative models, large language models, and financial systems.</p>
+</div>
+</header>
+<!-- Filter bar -->
+<div aria-label="Publication filters" class="pub-filters-wrap" role="navigation"><div class="pub-filters-container"><div class="pub-filters"><span aria-hidden="true" class="pub-filters-label">Filter:</span><button aria-pressed="true" class="filter-btn active" data-filter="all">All</button><button aria-pressed="false" class="filter-btn" data-filter="circuit-design">Circuit Design</button><button aria-pressed="false" class="filter-btn" data-filter="drug-delivery">Drug Delivery</button><button aria-pressed="false" class="filter-btn" data-filter="generative-ai">Generative AI</button><button aria-pressed="false" class="filter-btn" data-filter="finance">Finance</button></div></div></div>
+<!-- Live region for filter announcements -->
+<div aria-atomic="true" aria-live="polite" class="sr-only" id="filter-announce"></div>
+<!-- Publications list -->
+<section aria-label="Publications list" class="pub-list-section">
+<!-- ===== 2026 ===== -->
+<div class="pub-year-group" data-year="2026" id="year-2026">
+<h2 class="pub-year-heading">2026</h2>
+<!-- [1] EM-Aware Physical Synthesis -->
+<!-- [2] Decoding Extrahepatic Targeting -->
+<!-- [3] LANTERN -->
+<!-- [4] ATHENA -->
+<article class="pub-entry" data-category="drug-delivery" id="pub-extrahepatic">
+<div class="pub-meta-row">
+<span class="pub-badge pub-badge-drug">Drug Delivery</span>
+<span class="pub-venue">In preparation · 2026</span>
+</div>
+<h3 class="pub-title">
+<a href="publications/decoding-extrahepatic-targeting.html">
+              Decoding Extrahepatic Targeting of Lipid Nanoparticles with Interpretable Machine Learning
+            </a>
+</h3>
+<p class="pub-authors">
+<strong>Asal Mehradfar</strong><span class="equal-star">*</span>,
+            Mohammad Shahab Sepehri<span class="equal-star">*</span>,
+            O. Antholine, V. Shankar, Glen S. Kwon, Salman Avestimehr, and Morteza Rasoulianboroujeni
+          </p>
+<div class="pub-resources">
+<!-- Paper: [VERIFY PAPER LINK] — not yet available -->
+<a class="btn-resource" href="https://github.com/AsalMehradfar/lnp-extrahepatic-targeting" rel="noopener noreferrer" target="_blank">Code</a><button aria-label="Show BibTeX citation for Decoding Extrahepatic Targeting" class="btn-resource btn-cite" data-bibtex-id="extrahepatic">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Cite
+            </button></div>
+</article><article class="pub-entry" data-category="drug-delivery" id="pub-lantern">
+<div class="pub-meta-row">
+<span class="pub-badge pub-badge-drug">Drug Delivery</span>
+<span class="pub-venue">Communications AI &amp; Computing, Nature Portfolio · 2026</span>
+</div>
+<h3 class="pub-title">
+<a href="publications/lantern.html">
+              A Machine Learning Benchmarking Framework for Lipid Nanoparticle Transfection Efficiency Prediction
+            </a>
+</h3>
+<p class="pub-authors">
+<strong>Asal Mehradfar</strong><span class="equal-star">*</span>,
+            Mohammad Shahab Sepehri<span class="equal-star">*</span>,
+            Jose Miguel Hernandez-Lobato, Glen S. Kwon, Mahdi Soltanolkotabi, Salman Avestimehr, and Morteza Rasoulianboroujeni
+          </p>
+<div class="pub-resources">
+<a class="btn-resource" href="https://arxiv.org/abs/2507.03209" rel="noopener noreferrer" target="_blank">Paper</a><a class="btn-resource" href="https://doi.org/10.1038/s44488-026-00007-x" rel="noopener noreferrer" target="_blank">DOI</a><a class="btn-resource" href="https://github.com/AsalMehradfar/LANTERN" rel="noopener noreferrer" target="_blank">Code</a><button aria-label="Show BibTeX citation for LANTERN" class="btn-resource btn-cite" data-bibtex-id="lantern">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Cite
+            </button></div>
+</article><article class="pub-entry" data-category="generative-ai" id="pub-athena">
+<div class="pub-meta-row">
+<span class="pub-badge pub-badge-genai">Generative AI</span>
+<span class="pub-venue">ViSCALE Workshop @ CVPR 2026</span>
+</div>
+<h3 class="pub-title">
+<a href="publications/athena.html">
+              ATHENA: Adaptive Test-Time Steering for Improving Count Fidelity in Diffusion Models
+            </a>
+</h3>
+<p class="pub-authors">
+            Mohammad Shahab Sepehri<span class="equal-star">*</span>,
+            <strong>Asal Mehradfar</strong><span class="equal-star">*</span>,
+            Berk Tinaz, Salman Avestimehr, and Mahdi Soltanolkotabi
+          </p>
+<div class="pub-resources">
+<a class="btn-resource" href="https://arxiv.org/abs/2603.19676" rel="noopener noreferrer" target="_blank">Paper</a><a class="btn-resource" href="https://github.com/MShahabSepehri/ATHENA" rel="noopener noreferrer" target="_blank">Code</a><button aria-label="Show BibTeX citation for ATHENA" class="btn-resource btn-cite" data-bibtex-id="athena">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Cite
+            </button></div>
+</article><article class="pub-entry" data-category="circuit-design" id="pub-em-aware">
+<div class="pub-meta-row">
+<span class="pub-badge pub-badge-circuits">Circuit Design</span>
+<span class="pub-venue">IEEE ISCAS 2026</span>
+</div>
+<h3 class="pub-title">
+<a href="publications/em-aware-physical-synthesis.html">
+              EM-Aware Physical Synthesis: Neural Inductor Modeling and Intelligent Placement &amp; Routing for RF Circuits
+            </a>
+</h3>
+<p class="pub-authors">
+            Yilun Huang, <strong>Asal Mehradfar</strong>, Salman Avestimehr, and Hamidreza Aghasi
+          </p>
+<div class="pub-resources">
+<!-- Paper link: [VERIFY PAPER LINK] — not yet available -->
+<a class="btn-resource" href="https://arxiv.org/abs/2602.11461" rel="noopener noreferrer" target="_blank">Paper</a><a class="btn-resource" href="https://github.com/AsalMehradfar/InductorModeling" rel="noopener noreferrer" target="_blank">Code</a><button aria-label="Show BibTeX citation for EM-Aware Physical Synthesis" class="btn-resource btn-cite" data-bibtex-id="em-aware">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Cite
+            </button></div>
+</article></div><!-- /year-2026 -->
+<!-- ===== 2025 ===== -->
+<div class="pub-year-group" data-year="2025" id="year-2025">
+<h2 class="pub-year-heading">2025</h2>
+<!-- [5] FALCON -->
+<!-- [6] Supervised Learning for Analog and RF -->
+<!-- [7] CryptoMamba -->
+<!-- [8] LLM Routing -->
+<article class="pub-entry" data-category="circuit-design" id="pub-falcon">
+<div class="pub-meta-row">
+<span class="pub-badge pub-badge-circuits">Circuit Design</span>
+<span class="pub-venue">NeurIPS 2025</span>
+</div>
+<h3 class="pub-title">
+<a href="publications/falcon.html">
+              FALCON: An ML Framework for Fully Automated Layout-Constrained Analog Circuit Design
+            </a>
+</h3>
+<p class="pub-authors">
+<strong>Asal Mehradfar</strong>, Xuzhe Zhao, Yilun Huang, Emir Ceyani, Yankai Yang,
+            Shihao Han, Hamidreza Aghasi, and Salman Avestimehr
+          </p>
+<div class="pub-resources">
+<a class="btn-resource" href="https://arxiv.org/abs/2505.21923" rel="noopener noreferrer" target="_blank">Paper</a><a class="btn-resource" href="https://github.com/AsalMehradfar/FALCON" rel="noopener noreferrer" target="_blank">Code</a><button aria-label="Show BibTeX citation for FALCON" class="btn-resource btn-cite" data-bibtex-id="falcon">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Cite
+            </button></div>
+</article><article class="pub-entry" data-category="generative-ai" id="pub-llm-routing">
+<div class="pub-meta-row">
+<span class="pub-badge pub-badge-genai">Generative AI</span>
+<span class="pub-venue">CFAgentic Workshop @ ICML 2025</span>
+</div>
+<h3 class="pub-title">
+<a href="publications/llm-routing.html">
+              Leveraging Uncertainty Estimation for Efficient LLM Routing
+            </a>
+</h3>
+<p class="pub-authors">
+            Tuo Zhang<span class="equal-star">*</span>,
+            <strong>Asal Mehradfar</strong><span class="equal-star">*</span>,
+            Dimitrios Dimitriadis, and Salman Avestimehr
+          </p>
+<div class="pub-resources">
+<!-- Paper link to be added when available -->
+<a class="btn-resource" href="https://arxiv.org/abs/2502.11021" rel="noopener noreferrer" target="_blank">Paper</a><button aria-label="Show BibTeX citation for LLM Routing" class="btn-resource btn-cite" data-bibtex-id="llm-routing">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Cite
+            </button></div>
+</article><article class="pub-entry" data-category="finance" id="pub-cryptomamba">
+<div class="pub-meta-row">
+<span class="pub-badge pub-badge-finance">Finance</span>
+<span class="pub-venue">IEEE ICBC 2025</span>
+</div>
+<h3 class="pub-title">
+<a href="publications/cryptomamba.html">
+              CryptoMamba: Leveraging State Space Models for Accurate Bitcoin Price Prediction
+            </a>
+</h3>
+<p class="pub-authors">
+            Mohammad Shahab Sepehri<span class="equal-star">*</span>,
+            <strong>Asal Mehradfar</strong><span class="equal-star">*</span>,
+            Mahdi Soltanolkotabi, and Salman Avestimehr
+          </p>
+<div class="pub-resources">
+<a class="btn-resource" href="https://arxiv.org/abs/2501.01010" rel="noopener noreferrer" target="_blank">Paper</a><a class="btn-resource" href="https://github.com/MShahabSepehri/CryptoMamba" rel="noopener noreferrer" target="_blank">Code</a><button aria-label="Show BibTeX citation for CryptoMamba" class="btn-resource btn-cite" data-bibtex-id="cryptomamba">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Cite
+            </button></div>
+</article><article class="pub-entry" data-category="circuit-design" id="pub-supervised">
+<div class="pub-meta-row">
+<span class="pub-badge pub-badge-circuits">Circuit Design</span>
+<span class="pub-venue">arXiv preprint · 2025</span>
+</div>
+<h3 class="pub-title">
+<a href="publications/supervised-analog-rf.html">
+              Supervised Learning for Analog and RF Circuit Design: Benchmarks and Comparative Insights
+            </a>
+</h3>
+<p class="pub-authors">
+<strong>Asal Mehradfar</strong>, Xuzhe Zhao, Yinuo Niu, Sina Babakniya,
+            Mohammad Alesheikh, Hamidreza Aghasi, and Salman Avestimehr
+          </p>
+<div class="pub-resources">
+<a class="btn-resource" href="https://arxiv.org/abs/2501.11839" rel="noopener noreferrer" target="_blank">Paper</a><button aria-label="Show BibTeX citation for Supervised Learning for Analog and RF" class="btn-resource btn-cite" data-bibtex-id="supervised">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Cite
+            </button></div>
+</article></div><!-- /year-2025 -->
+<!-- ===== 2024 ===== -->
+<div class="pub-year-group" data-year="2024" id="year-2024">
+<h2 class="pub-year-heading">2024</h2>
+<!-- [9] AICircuit -->
+<article class="pub-entry" data-category="circuit-design" id="pub-aicircuit">
+<div class="pub-meta-row">
+<span class="pub-badge pub-badge-circuits">Circuit Design</span>
+<span class="pub-venue">ML4PS Workshop @ NeurIPS 2024</span>
+</div>
+<h3 class="pub-title">
+<a href="publications/aicircuit.html">
+              AICircuit: A Multi-Level Dataset and Benchmark for AI-Driven Analog Integrated Circuit Design
+            </a>
+</h3>
+<p class="pub-authors">
+<strong>Asal Mehradfar</strong>, Xuzhe Zhao, Yinuo Niu, Sina Babakniya,
+            Mohammad Alesheikh, Hamidreza Aghasi, and Salman Avestimehr
+          </p>
+<div class="pub-resources">
+<!-- Paper link to be added when available -->
+<a class="btn-resource" href="https://arxiv.org/abs/2407.18272" rel="noopener noreferrer" target="_blank">Paper</a><a class="btn-resource" href="https://github.com/AvestimehrResearchGroup/AICircuit" rel="noopener noreferrer" target="_blank">Code</a><button aria-label="Show BibTeX citation for AICircuit" class="btn-resource btn-cite" data-bibtex-id="aicircuit">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Cite
+            </button></div>
+</article></div><!-- /year-2024 -->
+<p class="equal-contrib-note equal-contrib-note--end">* Equal contribution</p></section><!-- /pub-list-section -->
+</main>
+<!-- ===================== BIBTEX MODAL ===================== -->
+<div aria-labelledby="bibtex-modal-title" aria-modal="true" class="bibtex-modal-backdrop" id="bibtex-modal" role="dialog">
+<div class="bibtex-modal">
+<div class="bibtex-modal-header">
+<h2 class="bibtex-modal-title" id="bibtex-modal-title">BibTeX Citation</h2>
+<button aria-label="Close citation modal" class="bibtex-modal-close" id="bibtex-modal-close">
+<svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-width="2.5" viewbox="0 0 24 24" width="16">
+<line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+</div>
+<div class="bibtex-modal-body">
+<pre class="bibtex-code" id="bibtex-content" tabindex="0"></pre>
+</div>
+<div class="bibtex-modal-footer">
+<button class="btn-copy-bibtex" id="btn-copy-bibtex">Copy BibTeX</button>
+</div>
+</div>
+</div>
+<!-- ===================== FOOTER ===================== -->
+<!-- ===================== BIBTEX DATA ===================== -->
+<!-- All BibTeX entries stored as data attributes on hidden elements -->
+<div aria-hidden="true" hidden="" id="bibtex-data">
+<template id="bib-em-aware">@inproceedings{huang2026emaware,
+  title     = {{EM-Aware Physical Synthesis: Neural Inductor Modeling and Intelligent Placement \&amp; Routing for RF Circuits}},
+  author    = {Huang, Yilun and Mehradfar, Asal and Avestimehr, Salman and Aghasi, Hamidreza},
+  booktitle = {IEEE International Symposium on Circuits and Systems (ISCAS)},
+  year      = {2026}
+}</template>
+<template id="bib-extrahepatic">@article{mehradfar2026extrahepatic,
+  title   = {{Decoding Extrahepatic Targeting of Lipid Nanoparticles with Interpretable Machine Learning}},
+  author  = {Mehradfar, Asal and Sepehri, Mohammad Shahab and Antholine, Owen and Shankar, Varun and Kwon, Glen S. and Avestimehr, Salman and Rasoulianboroujeni, Morteza},
+  year    = {2026},
+  note    = {Manuscript in preparation}
+}</template>
+<template id="bib-lantern">@inproceedings{mehradfar2026lantern,
+  title     = {{A Machine Learning Benchmarking Framework for Lipid Nanoparticle Transfection Efficiency Prediction}},
+  author    = {Mehradfar, Asal and Sepehri, Mohammad Shahab and Hernandez-Lobato, Jose Miguel and Kwon, Glen S. and Soltanolkotabi, Mahdi and Avestimehr, Salman and Rasoulianboroujeni, Morteza},
+  booktitle = {Communications AI \&amp; Computing},
+  publisher = {Nature Portfolio},
+  year      = {2026},
+  doi       = {10.1038/s44488-026-00007-x},
+  url       = {https://doi.org/10.1038/s44488-026-00007-x}
+}</template>
+<template id="bib-athena">@article{sepehri2026athena,
+  title   = {{ATHENA: Adaptive Test-Time Steering for Improving Count Fidelity in Diffusion Models}},
+  author  = {Sepehri, Mohammad Shahab and Mehradfar, Asal and Tinaz, Berk and Avestimehr, Salman and Soltanolkotabi, Mahdi},
+  journal = {ViSCALE Workshop at CVPR},
+  year    = {2026}
+}</template>
+<template id="bib-falcon">@inproceedings{mehradfar2025falcon,
+  title     = {{FALCON: An ML Framework for Fully Automated Layout-Constrained Analog Circuit Design}},
+  author    = {Mehradfar, Asal and Zhao, Xuzhe and Huang, Yilun and Ceyani, Emir and Yang, Yankai and Han, Shihao and Aghasi, Hamidreza and Avestimehr, Salman},
+  booktitle = {The Thirty-ninth Annual Conference on Neural Information Processing Systems (NeurIPS)},
+  year      = {2025}
+}</template>
+<template id="bib-supervised">@article{mehradfar2025supervised,
+  title   = {{Supervised Learning for Analog and RF Circuit Design: Benchmarks and Comparative Insights}},
+  author  = {Mehradfar, Asal and Zhao, Xuzhe and Niu, Yinuo and Babakniya, Sina and Alesheikh, Mohammad and Aghasi, Hamidreza and Avestimehr, Salman},
+  journal = {arXiv preprint arXiv:2501.11839},
+  year    = {2025},
+  eprint  = {2501.11839},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2501.11839}
+}</template>
+<template id="bib-cryptomamba">@inproceedings{sepehri2025cryptomamba,
+  title     = {{CryptoMamba: Leveraging State Space Models for Accurate Bitcoin Price Prediction}},
+  author    = {Sepehri, Mohammad Shahab and Mehradfar, Asal and Soltanolkotabi, Mahdi and Avestimehr, Salman},
+  booktitle = {IEEE International Conference on Blockchain and Cryptocurrency (ICBC)},
+  year      = {2025}
+}</template>
+<template id="bib-llm-routing">@article{zhang2025llmrouting,
+  title   = {{Leveraging Uncertainty Estimation for Efficient LLM Routing}},
+  author  = {Zhang, Tuo and Mehradfar, Asal and Dimitriadis, Dimitrios and Avestimehr, Salman},
+  journal = {CFAgentic Workshop at ICML},
+  year    = {2025}
+}</template>
+<template id="bib-aicircuit">@article{mehradfar2024aicircuit,
+  title   = {{AICircuit: A Multi-Level Dataset and Benchmark for AI-Driven Analog Integrated Circuit Design}},
+  author  = {Mehradfar, Asal and Zhao, Xuzhe and Niu, Yinuo and Babakniya, Sina and Alesheikh, Mohammad and Aghasi, Hamidreza and Avestimehr, Salman},
+  journal = {ML4PS Workshop at NeurIPS},
+  year    = {2024}
+}</template>
+</div><!-- /bibtex-data -->
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+    /* =========================================================
+       THEME TOGGLE
+       ========================================================= */
+    (function() {
+      var btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+      var html = document.documentElement;
+
+      function applyTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+
+      // Initialize from stored or OS preference
+      var stored = localStorage.getItem('theme');
+      var preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      applyTheme(preferred);
+
+      btn.addEventListener('click', function() {
+        var current = html.getAttribute('data-theme');
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    })();
+
+    /* =========================================================
+       MOBILE HAMBURGER MENU
+       ========================================================= */
+    (function() {
+      var hamburger = document.getElementById('nav-hamburger');
+      var mobileNav = document.getElementById('nav-mobile');
+      var closeBtn  = document.getElementById('nav-mobile-close');
+      if (!hamburger || !mobileNav) return;
+
+      function openMenu() {
+        mobileNav.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        if (closeBtn) closeBtn.focus();
+      }
+      function closeMenu() {
+        mobileNav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        hamburger.focus();
+      }
+
+      hamburger.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+      // Close on backdrop click
+      mobileNav.addEventListener('click', function(e) {
+        if (e.target === mobileNav) closeMenu();
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileNav.classList.contains('open')) closeMenu();
+      });
+
+      // Close when a link is selected
+      mobileNav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      // Close on resize to desktop
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && mobileNav.classList.contains('open')) closeMenu();
+      });
+    })();
+
+    /* =========================================================
+       PUBLICATION FILTER
+       ========================================================= */
+    (function() {
+      var filterBtns = document.querySelectorAll('.filter-btn');
+      var entries    = document.querySelectorAll('.pub-entry');
+      var yearGroups = document.querySelectorAll('.pub-year-group');
+      var announce   = document.getElementById('filter-announce');
+
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var filter = btn.getAttribute('data-filter');
+
+          // Update button states
+          filterBtns.forEach(function(b) {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
+
+          // Show/hide entries
+          var visibleCount = 0;
+          entries.forEach(function(entry) {
+            var cat = entry.getAttribute('data-category');
+            var show = (filter === 'all') || (cat === filter);
+            if (show) {
+              entry.removeAttribute('hidden');
+              visibleCount++;
+            } else {
+              entry.setAttribute('hidden', '');
+            }
+          });
+
+          // Hide year groups that have no visible entries
+          yearGroups.forEach(function(group) {
+            var hasVisible = Array.from(group.querySelectorAll('.pub-entry')).some(function(e) {
+              return !e.hasAttribute('hidden');
+            });
+            if (hasVisible) {
+              group.removeAttribute('hidden');
+            } else {
+              group.setAttribute('hidden', '');
+            }
+          });
+
+          // Announce to screen readers
+          if (announce) {
+            var label = btn.textContent.trim();
+            announce.textContent = visibleCount + ' publication' + (visibleCount !== 1 ? 's' : '') + ' shown for filter: ' + label;
+          }
+        });
+      });
+    })();
+
+    /* =========================================================
+       BIBTEX MODAL
+       ========================================================= */
+    (function() {
+      var modal      = document.getElementById('bibtex-modal');
+      var closeBtn   = document.getElementById('bibtex-modal-close');
+      var content    = document.getElementById('bibtex-content');
+      var copyBtn    = document.getElementById('btn-copy-bibtex');
+      var lastFocus  = null;
+
+      if (!modal) return;
+
+      function openModal(bibtexId) {
+        var tpl = document.getElementById('bib-' + bibtexId);
+        if (!tpl) return;
+        content.textContent = tpl.innerHTML.trim();
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        lastFocus = document.activeElement;
+        // Focus the close button
+        setTimeout(function() { if (closeBtn) closeBtn.focus(); }, 50);
+      }
+
+      function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+        copyBtn.textContent = 'Copy BibTeX';
+        copyBtn.classList.remove('copied');
+        if (lastFocus) lastFocus.focus();
+      }
+
+      // Open on cite button click
+      document.querySelectorAll('[data-bibtex-id]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          openModal(btn.getAttribute('data-bibtex-id'));
+        });
+      });
+
+      // Close button
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+      // Backdrop click
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+      });
+
+      // Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      });
+
+      // Copy BibTeX
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+          var text = content.textContent;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function() {
+              copyBtn.textContent = 'Copied!';
+              copyBtn.classList.add('copied');
+              setTimeout(function() {
+                copyBtn.textContent = 'Copy BibTeX';
+                copyBtn.classList.remove('copied');
+              }, 2000);
+            }).catch(function() {
+              fallbackCopy(text);
+            });
+          } else {
+            fallbackCopy(text);
+          }
+        });
+      }
+
+      function fallbackCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+          copyBtn.textContent = 'Copied!';
+          copyBtn.classList.add('copied');
+          setTimeout(function() {
+            copyBtn.textContent = 'Copy BibTeX';
+            copyBtn.classList.remove('copied');
+          }, 2000);
+        } catch(e) {}
+        document.body.removeChild(ta);
+      }
+    })();
+
+    /* =========================================================
+       DYNAMIC COPYRIGHT YEAR
+       ========================================================= */
+    (function() {
+      var el = document.getElementById('footer-year');
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+  </script>
+<site-footer></site-footer><script defer="True" src="assets/js/shared-layout.js"></script></body>
+</html>
