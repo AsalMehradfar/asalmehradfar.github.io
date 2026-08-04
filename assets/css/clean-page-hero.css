@@ -1,0 +1,218 @@
+
+/* ============================================================
+   CLEAN INNER-PAGE HERO
+   Research-page structure + homepage typography and alignment.
+   ============================================================ */
+
+.clean-page-hero {
+  width: 100%;
+  margin: 0;
+  padding: 3.25rem 0 2.75rem;
+  background: var(--color-bg-alt);
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+.clean-page-hero__inner {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.clean-page-hero__eyebrow {
+  margin: 0 0 0.85rem;
+  padding: 0;
+  color: var(--color-accent);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.clean-page-hero__title {
+  max-width: 21ch;
+  margin: 0 0 1rem;
+  padding: 0;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.clean-page-hero__description {
+  max-width: 58ch;
+  margin: 0;
+  padding: 0;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* Publication-detail pages retain their metadata within the same system. */
+.clean-page-hero--publication {
+  padding-top: 2.75rem;
+}
+
+.clean-page-hero--publication .clean-page-hero__title {
+  max-width: 27ch;
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+}
+
+.clean-page-hero__breadcrumb {
+  margin: 0 0 1.25rem;
+}
+
+.clean-page-hero__category {
+  display: inline-flex;
+  margin: 0 0 0.9rem;
+}
+
+.clean-page-hero__authors {
+  max-width: 74ch;
+  margin: 1.15rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.clean-page-hero__venue {
+  margin-top: 0.65rem;
+}
+
+.clean-page-hero__resources {
+  margin-top: 1.35rem;
+}
+
+@media (max-width: 900px) {
+  .clean-page-hero__inner {
+    padding-inline: var(--space-lg);
+  }
+}
+
+@media (max-width: 600px) {
+  .clean-page-hero,
+  .clean-page-hero--publication {
+    padding: 2.5rem 0 2.15rem;
+  }
+
+  .clean-page-hero__inner {
+    padding-inline: var(--space-md);
+  }
+
+  .clean-page-hero__title {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .clean-page-hero--publication .clean-page-hero__title {
+    font-size: clamp(1.8rem, 8.5vw, 2.5rem);
+  }
+
+  .clean-page-hero__description {
+    font-size: 1rem;
+  }
+}
+
+
+/* ============================================================
+   HERO ALIGNMENT AND TOP-GAP FIX
+   ============================================================ */
+
+/* Use the exact centered content width of the homepage regardless of
+   page-specific variable definitions or legacy hero selectors. */
+.clean-page-hero {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  margin-inline: 0 !important;
+  inset: auto !important;
+  transform: none !important;
+}
+
+.clean-page-hero > .clean-page-hero__inner,
+.clean-page-hero .clean-page-hero__inner {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-inline: auto !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  transform: none !important;
+  left: auto !important;
+  right: auto !important;
+}
+
+/* Neutralize the original page-specific wrapper widths/padding that remain
+   on the same element after the shared hero classes are added. */
+.clean-page-hero__inner.page-header__inner,
+.clean-page-hero__inner.page-header-inner {
+  max-width: 900px !important;
+  width: 100% !important;
+  margin-inline: auto !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+/* Some pages retain empty legacy header/mobile-navigation shells above main.
+   They create a blank strip between the shared header and the hero. */
+body > header:empty,
+body > header:not(:has(*)),
+body > .mobile-nav:empty,
+body > .nav-placeholder:empty {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+/* Ensure the hero starts immediately at the beginning of main content. */
+body > site-header + .skip-link + header:empty + main,
+body > site-header + .skip-link + main,
+body > site-header + main,
+main#main-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+main#main-content > .clean-page-hero:first-child,
+main#main-content > header.clean-page-hero:first-child,
+main#main-content > section.clean-page-hero:first-child,
+main#main-content article.pub-page > .clean-page-hero:first-child {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .clean-page-hero > .clean-page-hero__inner,
+  .clean-page-hero .clean-page-hero__inner,
+  .clean-page-hero__inner.page-header__inner,
+  .clean-page-hero__inner.page-header-inner {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .clean-page-hero > .clean-page-hero__inner,
+  .clean-page-hero .clean-page-hero__inner,
+  .clean-page-hero__inner.page-header__inner,
+  .clean-page-hero__inner.page-header-inner {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
