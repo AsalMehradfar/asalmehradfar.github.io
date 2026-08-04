@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Experience &amp; Education | Asal Mehradfar</title>
+<!-- Browser tab icon: add website-icon.png to assets/icons/ -->
+<link href="assets/icons/website-icon.png" rel="icon" type="image/png"/>
+<link href="assets/icons/website-icon.png" rel="apple-touch-icon"/>
+<meta content="Asal Mehradfar's research experience, education at USC and Sharif University, honors and awards, and technical skills in AI and machine learning." name="description"/>
+<!-- Canonical URL -->
+<link href="https://asalmehradfar.github.io/experience.html" rel="canonical"/>
+<!-- THEME FLASH PREVENTION — must run before CSS loads -->
+<script>
+  (function() {
+    var stored;
+    try { stored = localStorage.getItem('theme'); } catch(e) {}
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+  </script>
+<!-- Shared Stylesheet -->
+<link href="assets/css/styles.css" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Favicon -->
+<!-- Open Graph -->
+<meta content="Experience &amp; Education | Asal Mehradfar" property="og:title"/>
+<meta content="Research experience, education, honors, and technical skills of Asal Mehradfar, Ph.D. candidate at USC." property="og:description"/>
+<meta content="assets/images/social-preview.webp" property="og:image"/>
+<meta content="website" property="og:type"/>
+<meta content="https://asalmehradfar.github.io/experience.html" property="og:url"/>
+<!-- Twitter/X Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Experience &amp; Education | Asal Mehradfar" name="twitter:title"/>
+<meta content="Research experience, education, honors, and technical skills of Asal Mehradfar, Ph.D. candidate at USC." name="twitter:description"/>
+<meta content="assets/images/social-preview.webp" name="twitter:image"/>
+<!-- Theme color -->
+<meta content="#F8FAFC" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#0F172A" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<!-- Robots -->
+<meta content="index, follow" name="robots"/>
+<!-- Page-specific styles -->
+<style>
+    /* =========================================================
+       EXPERIENCE PAGE — PAGE-SPECIFIC STYLES
+       All design tokens come from assets/css/styles.css
+       ========================================================= */
+
+    /* ---- Page Header ---- */
+    .page-header {
+      background-color: var(--color-bg-alt);
+      border-bottom: 1px solid var(--color-border);
+      padding: 3rem 1.5rem 2.5rem;
+    }
+
+    .page-header__inner {
+      max-width: var(--max-width-content);
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .page-header__eyebrow {
+      font-size: var(--text-xs);
+      font-weight: var(--weight-semibold);
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-3);
+    }
+
+    .page-header__title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: var(--weight-bold);
+      color: var(--color-text);
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-tight);
+    }
+
+    /* ---- Section wrapper ---- */
+    .exp-section {
+      padding: var(--space-16) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .exp-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .exp-section--alt {
+      background-color: var(--color-bg-alt);
+    }
+
+    .exp-section__inner {
+      max-width: var(--max-width-content);
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    /* Section heading */
+    .exp-section__eyebrow {
+      font-size: var(--text-xs);
+      font-weight: var(--weight-semibold);
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-2);
+    }
+
+    .exp-section__title {
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      font-weight: var(--weight-bold);
+      color: var(--color-text);
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-tight);
+      margin-bottom: var(--space-10);
+    }
+
+    /* ---- Research Experience Blocks ---- */
+    .research-block {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: var(--space-8);
+      padding: var(--space-8) 0;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .research-block:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    /* Left: meta column */
+    .research-block__meta {
+      padding-top: 2px;
+    }
+
+    .research-block__period {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-medium);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-2);
+    }
+
+    .research-block__area-badge {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: var(--weight-semibold);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-accent);
+      background-color: var(--color-accent-light);
+      border: 1px solid rgba(155, 27, 48, 0.2);
+      border-radius: 4px;
+      padding: 3px var(--space-2);
+    }
+
+    [data-theme="dark"] .research-block__area-badge {
+      background-color: rgba(155, 27, 48, 0.15);
+      border-color: rgba(224, 90, 114, 0.3);
+    }
+
+    /* Right: content column */
+    .research-block__content {}
+
+    .research-block__title {
+      font-size: var(--text-xl);
+      font-weight: var(--weight-semibold);
+      color: var(--color-text);
+      line-height: var(--leading-snug);
+      margin-bottom: var(--space-3);
+      letter-spacing: var(--tracking-tight);
+    }
+
+    .research-block__intro {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-5);
+      max-width: 72ch;
+    }
+
+    /* Contributions list */
+    .contributions-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .contributions-list li {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+
+    .contributions-list li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--color-accent);
+      flex-shrink: 0;
+      margin-top: 9px;
+    }
+
+    .contributions-list a {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: var(--weight-medium);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease;
+    }
+
+    .contributions-list a:hover {
+      border-bottom-color: var(--color-accent);
+    }
+
+    /* Ongoing note */
+    .ongoing-note {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+      background-color: var(--color-accent-light);
+      border-left: 3px solid var(--color-accent);
+      border-radius: 0 6px 6px 0;
+      padding: var(--space-3) var(--space-4);
+      margin-top: var(--space-2);
+    }
+
+    [data-theme="dark"] .ongoing-note {
+      background-color: rgba(155, 27, 48, 0.12);
+    }
+
+    .ongoing-note__label {
+      font-size: var(--text-xs);
+      font-weight: var(--weight-bold);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--color-accent);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    .ongoing-note__text {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+      margin: 0;
+    }
+
+    /* ---- Education ---- */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-5);
+    }
+
+    .edu-card {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: var(--space-6);
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .edu-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      border-color: var(--color-border-strong);
+    }
+
+    [data-theme="dark"] .edu-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+
+    .edu-card__institution {
+      font-size: var(--text-base);
+      font-weight: var(--weight-semibold);
+      color: var(--color-text);
+      margin-bottom: var(--space-1);
+      line-height: var(--leading-snug);
+    }
+
+    .edu-card__degree {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-3);
+      line-height: var(--leading-snug);
+    }
+
+    .edu-card__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      align-items: center;
+    }
+
+    .edu-card__years {
+      font-size: var(--text-xs);
+      font-weight: var(--weight-medium);
+      color: var(--color-text-muted);
+      background-color: var(--color-bg-code);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 2px var(--space-2);
+    }
+
+    .edu-card__location {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+
+    .edu-card__advisor {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      margin-top: var(--space-2);
+      font-style: italic;
+    }
+
+    /* ---- Honors & Awards ---- */
+    .awards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .award-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: var(--space-4);
+      align-items: center;
+      padding: var(--space-5) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .award-item:first-child {
+      border-top: 1px solid var(--color-border);
+    }
+
+    .award-item__left {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+
+    /* Decorative accent mark instead of trophy */
+    .award-item__mark {
+      width: 3px;
+      height: 100%;
+      min-height: 36px;
+      background-color: var(--color-accent);
+      border-radius: 2px;
+      flex-shrink: 0;
+      align-self: stretch;
+    }
+
+    .award-item__name {
+      font-size: var(--text-base);
+      font-weight: var(--weight-semibold);
+      color: var(--color-text);
+      line-height: var(--leading-snug);
+      margin-bottom: var(--space-1);
+    }
+
+    .award-item__org {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-snug);
+    }
+
+    .award-item__year {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semibold);
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+
+    /* ---- Technical Skills ---- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+    }
+
+    .skill-category {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: var(--space-6);
+    }
+
+    .skill-category__title {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semibold);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .skill-tag {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      background-color: var(--color-bg-code);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 4px var(--space-3);
+      line-height: 1.5;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--color-accent-muted);
+      color: var(--color-text);
+    }
+
+    /* Research Methods category spans full width */
+    .skill-category--wide {
+      grid-column: 1 / -1;
+    }
+
+    /* ---- Reveal animation ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1023px) {
+      .research-block {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+
+      .research-block__meta {
+        display: flex;
+        gap: var(--space-3);
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .research-block__period {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-category--wide {
+        grid-column: 1;
+      }
+
+      .page-header {
+        padding: var(--space-12) 0 var(--space-8);
+      }
+
+      .exp-section {
+        padding: var(--space-12) 0;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .exp-section__inner,
+      .page-header__inner {
+        padding: 0 var(--space-4);
+      }
+
+      .award-item {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+      }
+
+      .award-item__year {
+        padding-left: calc(3px + var(--space-4));
+      }
+    }
+
+    @media (max-width: 375px) {
+      .exp-section__inner,
+      .page-header__inner {
+        padding: 0 var(--space-3);
+      }
+    }
+  </style>
+<link href="assets/css/palette.css" rel="stylesheet"/>
+<link href="assets/css/clean-page-hero.css" rel="stylesheet"/><style data-service-heading-match="true">.section-heading {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--color-text);
+      letter-spacing: -0.01em;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--color-accent);
+      margin-bottom: 1.75rem;
+      display: inline-block;
+    }</style><style data-experience-typography-final="true">
+/* ============================================================
+   EXPERIENCE TYPOGRAPHY LOCK
+   Neutralizes the legacy global h2 rules on this page only.
+   ============================================================ */
+
+/* Hero eyebrow: match Service exactly */
+.page-eyebrow.clean-page-hero__eyebrow{
+  margin:0 0 .85rem !important;
+  padding:0 !important;
+  color:var(--color-accent) !important;
+  font-family:var(--font-sans) !important;
+  font-size:.75rem !important;
+  font-weight:700 !important;
+  line-height:1.25 !important;
+  letter-spacing:.12em !important;
+  text-transform:uppercase !important;
+  opacity:1 !important;
+  transform:none !important;
+  filter:none !important;
+}
+
+/* Section titles: stronger than the content headings beneath them */
+#exp-edu-title.section-heading,
+#exp-skills-title.section-heading {
+  display: inline-block !important;
+  position: relative !important;
+  width: auto !important;
+  margin: 0 0 1.75rem !important;
+  padding: 0 0 0.75rem !important;
+  border: 0 !important;
+  border-bottom: 2px solid var(--color-accent) !important;
+
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 800 !important;
+  font-style: normal !important;
+  font-synthesis: none !important;
+  font-variation-settings: "wght" 800 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.015em !important;
+  color: var(--color-text) !important;
+  opacity: 1 !important;
+}
+
+/* Suppress the legacy short decorative line from styles.css */
+#exp-edu-title.section-heading::after,
+#exp-skills-title.section-heading::after {
+  content: none !important;
+  display: none !important;
+}
+</style><style data-experience-eyebrow-optical-fix="true">
+/*
+  Optical correction for the longer word "EXPERIENCE".
+  Its computed styling already matches Service/News, but the longer,
+  widely tracked word appears visually lighter at the same weight.
+*/
+.page-eyebrow.clean-page-hero__eyebrow {
+  font-weight: 800 !important;
+  font-synthesis: none !important;
+  font-variation-settings: "wght" 800 !important;
+  letter-spacing: 0.105em !important;
+  opacity: 1 !important;
+}
+</style><style data-education-card-refinement="true">
+/* ============================================================
+   EDUCATION — compact 2×2 polished card system
+   Content is unchanged.
+   ============================================================ */
+
+#education.exp-section--alt {
+  background: transparent !important;
+}
+
+#education .education-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1.25rem !important;
+  align-items: stretch !important;
+}
+
+#education .edu-card--refined {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 10.4rem !important;
+  padding: 1.4rem 1.45rem 1.3rem !important;
+  overflow: hidden !important;
+
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.98), rgba(247,250,255,.96)) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-sm) !important;
+
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base) !important;
+}
+
+#education .edu-card--refined::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 auto 0 0 !important;
+  width: 4px !important;
+  background: linear-gradient(
+    180deg,
+    var(--color-accent),
+    color-mix(in srgb, var(--color-accent) 38%, transparent)
+  ) !important;
+}
+
+#education .edu-card--refined:hover {
+  border-color: var(--color-accent) !important;
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-2px) !important;
+}
+
+#education .edu-card__institution {
+  margin: 0 0 0.45rem !important;
+  color: var(--color-accent) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.045em !important;
+  text-transform: uppercase !important;
+}
+
+#education .edu-card__degree {
+  margin: 0 0 1rem !important;
+  color: var(--color-text) !important;
+  font-size: 1.08rem !important;
+  font-weight: 750 !important;
+  line-height: 1.42 !important;
+  letter-spacing: -0.012em !important;
+}
+
+#education .edu-card__meta {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 0.55rem 0.85rem !important;
+  margin-top: auto !important;
+  padding-top: 0.9rem !important;
+  border-top: 1px solid var(--color-border-light, var(--color-border)) !important;
+}
+
+#education .edu-card__years {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 1.75rem !important;
+  padding: 0.22rem 0.58rem !important;
+  border-radius: 999px !important;
+  background: var(--color-accent-light) !important;
+  color: var(--color-accent) !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+
+#education .edu-card__location {
+  color: var(--color-text-muted) !important;
+  font-size: 0.84rem !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+}
+
+#education .edu-card__advisor {
+  margin: 0.72rem 0 0 !important;
+  padding: 0.62rem 0.72rem !important;
+  border-left: 2px solid var(--color-accent-muted, var(--color-accent)) !important;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0 !important;
+  background: color-mix(in srgb, var(--color-accent-light) 62%, transparent) !important;
+  color: var(--color-text-secondary) !important;
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+  line-height: 1.45 !important;
+}
+
+@media (max-width: 720px) {
+  #education .education-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #education .edu-card--refined {
+    min-height: 0 !important;
+  }
+
+  
+}
+</style><style data-skills-redesign="true">
+/* ============================================================
+   TECHNICAL SKILLS — balanced 2×2 card system
+   ============================================================ */
+
+#skills.exp-section--alt,
+#technical-skills.exp-section--alt {
+  background: transparent !important;
+}
+
+.skills-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1.25rem !important;
+  align-items: stretch !important;
+}
+
+.skills-card {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 11.5rem !important;
+  padding: 1.4rem 1.45rem 1.35rem !important;
+  overflow: hidden !important;
+
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.98), rgba(247,250,255,.96)) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-sm) !important;
+
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base) !important;
+}
+
+.skills-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 auto 0 0 !important;
+  width: 4px !important;
+  background: linear-gradient(
+    180deg,
+    var(--color-accent),
+    color-mix(in srgb, var(--color-accent) 38%, transparent)
+  ) !important;
+}
+
+.skills-card:hover {
+  border-color: var(--color-accent) !important;
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-2px) !important;
+}
+
+.skills-card__title {
+  margin: 0 0 1rem !important;
+  color: var(--color-text) !important;
+  font-size: 1.08rem !important;
+  font-weight: 750 !important;
+  line-height: 1.4 !important;
+  letter-spacing: -0.012em !important;
+}
+
+.skills-card__tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.55rem !important;
+  align-content: flex-start !important;
+}
+
+.skill-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 1.85rem !important;
+  padding: 0.28rem 0.62rem !important;
+  border-radius: 999px !important;
+
+  background: var(--color-accent-light) !important;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 18%, transparent) !important;
+  color: var(--color-accent) !important;
+
+  font-size: 0.79rem !important;
+  font-weight: 650 !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 720px) {
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .skills-card {
+    min-height: 0 !important;
+  }
+}
+</style></head>
+<body><site-header></site-header>
+<!-- Skip to main content (accessibility) -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<!-- ============================================================
+       SITE NAVIGATION
+       ============================================================ -->
+<!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+<main id="main-content">
+<!-- Page Header -->
+<header class="page-header clean-page-hero">
+<div class="page-header-inner clean-page-hero__inner">
+<p class="page-eyebrow clean-page-hero__eyebrow">Experience</p>
+<h1 class="page-title clean-page-hero__title" id="page-title">Education &amp; Experience</h1>
+<p class="page-subtitle clean-page-hero__description">Academic background and technical expertise in artificial intelligence, machine learning, and electrical engineering.</p>
+</div>
+</header>
+<!-- ============================================================
+         EDUCATION, HONORS & AWARDS, TECHNICAL SKILLS
+         ============================================================ -->
+<!-- ============================================================
+         SECTION 2: EDUCATION
+         ============================================================ -->
+<section aria-labelledby="exp-edu-title" class="exp-section exp-section--alt" id="education">
+<div class="exp-section__inner">
+<h2 class="section-heading" id="exp-edu-title">Education</h2>
+<div class="education-grid reveal">
+<!-- USC PhD -->
+<div class="edu-card edu-card--refined edu-card--phd">
+<p class="edu-card__institution">University of Southern California</p>
+<p class="edu-card__degree">Ph.D. in Electrical Engineering</p>
+<div class="edu-card__meta">
+<span class="edu-card__years">2023 – Present</span>
+<span class="edu-card__location">Los Angeles, California</span>
+</div>
+</div>
+<!-- USC MS -->
+<div class="edu-card edu-card--refined">
+<p class="edu-card__institution">University of Southern California</p>
+<p class="edu-card__degree">M.S. in Electrical Engineering</p>
+<div class="edu-card__meta">
+<span class="edu-card__years">2023 – 2025</span>
+<span class="edu-card__location">Los Angeles, California</span>
+</div>
+</div>
+<!-- Sharif EE -->
+<div class="edu-card edu-card--refined">
+<p class="edu-card__institution">Sharif University of Technology</p>
+<p class="edu-card__degree">B.S. in Electrical Engineering</p>
+<div class="edu-card__meta">
+<span class="edu-card__years">2017 – 2022</span>
+<span class="edu-card__location">Tehran, Iran</span>
+</div>
+</div>
+<!-- Sharif CS -->
+<div class="edu-card edu-card--refined">
+<p class="edu-card__institution">Sharif University of Technology</p>
+<p class="edu-card__degree">B.S. in Computer Science</p>
+<div class="edu-card__meta">
+<span class="edu-card__years">2019 – 2022</span>
+<span class="edu-card__location">Tehran, Iran</span>
+</div>
+</div>
+</div><!-- /.education-grid -->
+</div><!-- /.exp-section__inner -->
+</section>
+<!-- ============================================================
+         SECTION 3: HONORS & AWARDS
+         ============================================================ -->
+<!-- ============================================================
+         SECTION 4: TECHNICAL SKILLS
+         ============================================================ -->
+<section aria-labelledby="exp-skills-title" class="exp-section exp-section--alt" id="skills">
+<div class="exp-section__inner"><h2 class="section-heading" id="exp-skills-title">Technical Skills</h2><div class="skills-grid reveal"><article class="skills-card"><h3 class="skills-card__title">Programming</h3><div class="skills-card__tags"><span class="skill-tag">Python</span><span class="skill-tag">MATLAB</span><span class="skill-tag">C</span><span class="skill-tag">C++</span><span class="skill-tag">Java</span></div></article><article class="skills-card"><h3 class="skills-card__title">Machine Learning</h3><div class="skills-card__tags"><span class="skill-tag">PyTorch</span><span class="skill-tag">PyTorch Geometric</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">scikit-learn</span><span class="skill-tag">NumPy</span><span class="skill-tag">pandas</span></div></article><article class="skills-card"><h3 class="skills-card__title">AI &amp; Modeling</h3><div class="skills-card__tags"><span class="skill-tag">Graph Neural Networks</span><span class="skill-tag">Generative AI</span><span class="skill-tag">Large Language Models</span><span class="skill-tag">Optimization</span><span class="skill-tag">Explainable AI</span><span class="skill-tag">AI for Science</span></div></article><article class="skills-card"><h3 class="skills-card__title">Research Tools</h3><div class="skills-card__tags"><span class="skill-tag">RDKit</span><span class="skill-tag">Git</span><span class="skill-tag">LaTeX</span></div></article></div></div><!-- /.exp-section__inner -->
+</section>
+<!-- ============================================================
+         CALL TO ACTION — View Full Research
+         ============================================================ -->
+</main><!-- /#main-content -->
+<!-- ============================================================
+       FOOTER
+       ============================================================ -->
+<!-- BibTeX Modal -->
+<div aria-labelledby="modal-title-id" aria-modal="true" class="modal-backdrop" hidden="" role="dialog">
+<div class="modal" role="document">
+<div class="modal-header">
+<h2 class="modal-title" id="modal-title-id">BibTeX Citation</h2>
+<button aria-label="Close citation dialog" class="modal-close" title="Close (Escape)" type="button">
+<svg aria-hidden="true" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+</div>
+<div class="modal-body">
+<pre aria-label="BibTeX citation text" class="modal-bibtex" tabindex="0"></pre>
+</div>
+<div class="modal-footer">
+<button aria-label="Close citation dialog" class="btn btn-secondary btn-sm modal-close" type="button">Close</button>
+<button aria-label="Copy BibTeX to clipboard" class="btn btn-primary btn-sm btn-copy" title="Copy to clipboard" type="button">
+<svg aria-hidden="true" fill="none" focusable="false" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg">
+<rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect>
+<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+</svg>
+<span class="btn-copy__label-default">Copy BibTeX</span>
+<span aria-live="polite" class="btn-copy__label-copied">Copied!</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Shared JavaScript -->
+<script src="assets/js/script.js"></script>
+<site-footer></site-footer><script defer="True" src="assets/js/shared-layout.js"></script></body>
+</html>
