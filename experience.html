@@ -879,6 +879,26 @@
     color-mix(in srgb, var(--color-accent) 34%, transparent)
   ) !important;
 }
+</style><style data-experience-description-rendering-fix="true">
+/*
+  Experience uniquely loads assets/css/styles.css, whose global body rule uses
+  antialiased font smoothing. Service and News do not, so identical 400-weight
+  hero copy appears thinner here. Restore the browser's normal rendering only
+  for this description.
+*/
+.clean-page-hero .page-subtitle.clean-page-hero__description {
+  font-family: var(--font-sans) !important;
+  font-size: 1.0625rem !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  letter-spacing: normal !important;
+  color: var(--color-text-muted) !important;
+  opacity: 1 !important;
+
+  -webkit-font-smoothing: auto !important;
+  -moz-osx-font-smoothing: auto !important;
+  text-rendering: auto !important;
+}
 </style></head>
 <body><site-header></site-header>
 <!-- Skip to main content (accessibility) -->
