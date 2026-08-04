@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>News — Asal Mehradfar</title>
+<!-- Browser tab icon: add website-icon.png to assets/icons/ -->
+<link href="assets/icons/website-icon.png" rel="icon" type="image/png"/>
+<link href="assets/icons/website-icon.png" rel="apple-touch-icon"/>
+<meta content="Latest news and updates from Asal Mehradfar: publications, presentations, awards, and research milestones." name="description"/>
+<!-- Open Graph -->
+<meta content="News — Asal Mehradfar" property="og:title"/>
+<meta content="Research news: publications, presentations, awards, and milestones." property="og:description"/>
+<meta content="website" property="og:type"/>
+<!-- Theme flash prevention -->
+<script>
+    (function() {
+      var stored = localStorage.getItem('theme');
+      var preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', preferred);
+    })();
+  </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    /* =========================================================
+       DESIGN TOKENS
+       ========================================================= */
+    :root {
+      --color-bg:            #F8FAFC;
+      --color-bg-alt:        #F1F5F9;
+      --color-bg-card:       #FFFFFF;
+      --color-bg-overlay:    rgba(15, 23, 42, 0.55);
+      --color-accent:        #315E9B;
+      --color-accent-hover:  #244A7C;
+      --color-accent-light:  #E8F0FA;
+      --color-accent-muted:  #5F83B5;
+      --color-text:          #172033;
+      --color-text-secondary:#475569;
+      --color-text-muted:    #64748B;
+      --color-text-inverse:  #F8FAFC;
+      --color-border:        #DCE3EC;
+      --color-border-strong: #C4CEDA;
+      --color-link:          #315E9B;
+      --color-link-hover:    #244A7C;
+      --color-focus-ring:    #315E9B;
+      --font-sans: 'Inter', 'Manrope', 'Source Sans 3', 'IBM Plex Sans', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --radius-sm:  4px;
+      --radius-md:  8px;
+      --radius-lg:  12px;
+      --shadow-sm:  0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md:  0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+      --nav-height: 64px;
+      --transition: 200ms ease;
+    }
+
+    [data-theme="dark"] {
+      --color-bg:            #0F172A;
+      --color-bg-alt:        #162033;
+      --color-bg-card:       #1B273B;
+      --color-bg-overlay:    rgba(0, 0, 0, 0.72);
+      --color-accent:        #7FA9E6;
+      --color-accent-hover:  #A5C4F2;
+      --color-accent-light:  #3A1820;
+      --color-accent-muted:  #5F83B5;
+      --color-text:          #F1F5F9;
+      --color-text-secondary:#C4BDB6;
+      --color-text-muted:    #94A3B8;
+      --color-text-inverse:  #172033;
+      --color-border:        #2A3A52;
+      --color-border-strong: #3A4D68;
+      --color-link:          #7FA9E6;
+      --color-link-hover:    #A5C4F2;
+      --color-focus-ring:    #7FA9E6;
+    }
+
+    /* =========================================================
+       RESET & BASE
+       ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color var(--transition), color var(--transition);
+    }
+    main { flex: 1; }
+    a { color: var(--color-link); text-decoration: none; }
+    a:hover { color: var(--color-link-hover); }
+    ul { list-style: none; }
+
+    /* =========================================================
+       SKIP LINK
+       ========================================================= */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--color-accent);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* =========================================================
+       NAVIGATION
+       ========================================================= */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .nav-logo { display: flex; flex-direction: column; text-decoration: none; line-height: 1.2; }
+    .nav-logo-name { font-size: 1rem; font-weight: 700; color: var(--color-text); letter-spacing: -0.01em; }
+    .nav-logo-tagline { font-size: 0.7rem; color: var(--color-text-muted); font-weight: 400; letter-spacing: 0.02em; }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      padding: 0.375rem 0.625rem;
+      border-radius: var(--radius-sm);
+      transition: color var(--transition), background var(--transition);
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: var(--color-text); background: var(--color-bg-alt); }
+    .nav-links a.active { color: var(--color-accent); font-weight: 600; }
+    .nav-links a.nav-cv {
+      border: 1.5px solid var(--color-border-strong);
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-sm);
+      color: var(--color-text);
+    }
+    .nav-links a.nav-cv:hover { border-color: var(--color-accent); color: var(--color-accent); background: transparent; }
+    .theme-toggle {
+      background: none;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      color: var(--color-text-secondary);
+      transition: border-color var(--transition), color var(--transition);
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .theme-toggle:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+    .icon-sun, .icon-moon { width: 18px; height: 18px; }
+    [data-theme="light"] .icon-moon { display: none; }
+    [data-theme="dark"]  .icon-sun  { display: none; }
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      width: 36px; height: 36px;
+      align-items: center; justify-content: center;
+      cursor: pointer;
+      color: var(--color-text);
+      flex-shrink: 0;
+    }
+    .nav-hamburger:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: var(--color-bg-overlay);
+    }
+    .nav-mobile.open { display: block; }
+    .nav-mobile-panel {
+      position: absolute;
+      top: 0; right: 0;
+      width: min(320px, 85vw);
+      height: 100%;
+      background: var(--color-bg);
+      border-left: 1px solid var(--color-border);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      overflow-y: auto;
+    }
+    .nav-mobile-close {
+      align-self: flex-end;
+      background: none;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+    }
+    .nav-mobile-panel a {
+      display: block;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      padding: 0.75rem 0.5rem;
+      border-bottom: 1px solid var(--color-border);
+      text-decoration: none;
+    }
+    .nav-mobile-panel a:hover, .nav-mobile-panel a.active { color: var(--color-accent); }
+
+    /* =========================================================
+       PAGE HEADER
+       ========================================================= */
+    .page-header {
+      background: var(--color-bg-alt);
+      border-bottom: 1px solid var(--color-border);
+      padding: 3rem 1.5rem 2.5rem;
+    }
+    .page-header-inner { max-width: 900px; margin: 0 auto; }
+    .page-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.75rem;
+    }
+    .page-title {
+      font-size: clamp(1.875rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .page-subtitle {
+      font-size: 1.0625rem;
+      color: var(--color-text-secondary);
+      max-width: 640px;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       NEWS TIMELINE
+       ========================================================= */
+    .news-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* Developer instructions block */
+    .dev-instructions {
+      background: var(--color-bg-alt);
+      border: 1px dashed var(--color-border-strong);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+    .dev-instructions strong { color: var(--color-text-secondary); }
+    .dev-instructions code {
+      font-family: 'IBM Plex Mono', 'Fira Code', monospace;
+      font-size: 0.75rem;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 3px;
+      padding: 0.1rem 0.35rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* Timeline container */
+    .news-timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+    /* Vertical line */
+    .news-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.4375rem; /* center of the dot */
+      top: 0.5rem;
+      bottom: 0;
+      width: 1.5px;
+      background: var(--color-border);
+    }
+
+    /*
+      ============================================================
+      HOW TO ADD A NEW NEWS ITEM
+      ============================================================
+      1. Copy one <article class="news-item"> block below.
+      2. Paste it at the TOP of .news-timeline (newest first).
+      3. Fill in:
+         - data-date: machine-readable date (YYYY-MM or YYYY)
+         - .news-date: human-readable date (e.g. "March 2027")
+         - .news-category: category label (e.g. "Publication", "Award", "Talk")
+         - .news-headline: short headline
+         - .news-body: one-sentence description
+         - .news-links: add <a> tags for paper/project links (optional)
+         - LinkedIn post URL: see the comment inside .news-links
+      4. If no LinkedIn post URL is available, leave the LinkedIn
+         <a> tag commented out — the layout stays balanced.
+      ============================================================
+    */
+
+    /* Individual news item */
+    .news-item {
+      position: relative;
+      padding-bottom: 2.25rem;
+    }
+    .news-item:last-child { padding-bottom: 0; }
+
+    /* Timeline dot */
+    .news-item::before {
+      content: '';
+      position: absolute;
+      left: -1.5625rem; /* aligns with the vertical line */
+      top: 0.4375rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      border: 2px solid var(--color-bg);
+      box-shadow: 0 0 0 1.5px var(--color-accent);
+      flex-shrink: 0;
+    }
+
+    .news-item-inner {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition), border-color var(--transition);
+    }
+    .news-item-inner:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-border-strong);
+    }
+
+    .news-item-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.625rem;
+      flex-wrap: wrap;
+    }
+
+    .news-date {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      white-space: nowrap;
+    }
+
+    .news-category {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 100px;
+      background: var(--color-bg-alt);
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+      white-space: nowrap;
+    }
+
+    .news-headline {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.4;
+      margin-bottom: 0.4rem;
+    }
+
+    .news-body {
+      font-size: 0.9375rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .news-body:last-child { margin-bottom: 0; }
+
+    /* Resource links row */
+    .news-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .news-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.275rem 0.65rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .news-link:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: var(--color-accent-light);
+    }
+    .news-link:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+    .news-link svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+    /* LinkedIn link — distinct styling */
+    .news-link-linkedin {
+      border-color: #0A66C2;
+      color: #0A66C2;
+    }
+    .news-link-linkedin:hover {
+      background: #EBF3FF;
+      border-color: #0A66C2;
+      color: #0A66C2;
+    }
+    [data-theme="dark"] .news-link-linkedin {
+      border-color: #5BA4F5;
+      color: #5BA4F5;
+    }
+    [data-theme="dark"] .news-link-linkedin:hover {
+      background: #1E3A5F;
+      border-color: #5BA4F5;
+      color: #5BA4F5;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    .site-footer {
+      background: var(--color-bg-alt);
+      border-top: 1px solid var(--color-border);
+      padding: 2.5rem 1.5rem;
+      margin-top: auto;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      text-align: center;
+    }
+    .footer-name { font-size: 1rem; font-weight: 700; color: var(--color-text); }
+    .footer-tagline { font-size: 0.8125rem; color: var(--color-text-muted); margin-top: 0.125rem; }
+    .footer-social { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+    .footer-social a {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text-muted);
+      transition: all var(--transition);
+    }
+    .footer-social a:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .footer-social svg { width: 18px; height: 18px; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; justify-content: center; }
+    .footer-nav a { font-size: 0.8125rem; color: var(--color-text-muted); text-decoration: none; transition: color var(--transition); }
+    .footer-nav a:hover { color: var(--color-accent); }
+    .footer-copy { font-size: 0.8125rem; color: var(--color-text-muted); }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .news-section { padding: 2rem 1rem 3.5rem; }
+      .page-header { padding: 2rem 1rem 1.75rem; }
+      .news-timeline { padding-left: 1.5rem; }
+      .news-item::before { left: -1.1875rem; }
+    }
+    @media (max-width: 430px) {
+      .news-item-inner { padding: 1rem 1.125rem; }
+      .news-item-header { flex-direction: column; gap: 0.375rem; }
+    }
+    @media (max-width: 375px) {
+      .news-headline { font-size: 0.9375rem; }
+      .news-body { font-size: 0.875rem; }
+    }
+
+    /* =========================================================
+       FOCUS & MOTION
+       ========================================================= */
+    :focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+<link href="assets/css/palette.css" rel="stylesheet"/>
+<link href="assets/css/clean-page-hero.css" rel="stylesheet"/><style>
+.news-links-inline{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin-top:.7rem}
+.news-links-inline a{background:none!important;border:none!important;padding:0!important;color:var(--color-accent);font-size:.92rem;text-decoration:none}
+.news-links-inline a:not(:last-child)::after{content:"·";margin-left:.35rem;color:var(--color-text-muted)}
+.news-body{margin:.55rem 0 0;color:var(--color-text-muted);font-size:.98rem;line-height:1.6}
+</style><style data-timeline-marker-center-fix="true">
+/* Keep the vertical line fixed; center each point precisely on it */
+.news-item::before {
+  left: -1.875rem !important;
+}
+</style></head>
+<body><site-header></site-header>
+<!-- Skip link -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<!-- ===================== NAVIGATION ===================== -->
+<!-- Mobile nav drawer -->
+<!-- ===================== MAIN ===================== -->
+<main id="main-content">
+<!-- Page header -->
+<header class="page-header clean-page-hero">
+<div class="page-header-inner clean-page-hero__inner">
+<p class="page-eyebrow clean-page-hero__eyebrow">News</p>
+<h1 class="page-title clean-page-hero__title">Latest News</h1>
+<p class="page-subtitle clean-page-hero__description">Publications, fellowships, awards, presentations, and other research milestones.</p>
+</div>
+</header>
+<section aria-label="News archive" class="news-section">
+<!-- Developer instructions (visible only in source / dev mode) -->
+<!--
+        ============================================================
+        HOW TO ADD A NEW NEWS ITEM
+        ============================================================
+        1. Copy the <article class="news-item"> template below.
+        2. Paste it at the TOP of <div class="news-timeline"> (newest first).
+        3. Fill in all fields:
+             data-date="YYYY-MM"          (machine-readable, for sorting)
+             .news-date                   (human-readable, e.g. "March 2027")
+             .news-category               (e.g. "Publication", "Award", "Talk", "Preprint")
+             .news-headline               (short title, 5–10 words)
+             .news-body                   (one sentence description)
+        4. Optional links inside .news-links:
+             - Paper link: uncomment and set href
+             - Project page link: uncomment and set href
+             - LinkedIn post URL: uncomment the .news-link-linkedin block and set href
+               (leave commented out if no LinkedIn post exists — layout stays balanced)
+        5. If no links exist, remove the entire .news-links div.
+        ============================================================
+
+        TEMPLATE (copy this block):
+
+        <article class="news-item" data-date="YYYY-MM">
+          <div class="news-item-inner">
+            <div class="news-item-header">
+              <time class="news-date" datetime="YYYY-MM">Month YYYY</time>
+              <span class="news-category">Category</span>
+            </div>
+            <h2 class="news-headline">Short headline here</h2>
+            <p class="news-body">One-sentence description of the news item.</p>
+            <div class="news-links">
+              Paper link (optional) — uncomment and set href
+              <a class="news-link" href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Paper
+              </a>
+              
+              Project page link (optional) — uncomment and set href
+              <a class="news-link" href="publications/SLUG.html">
+                Explore Project
+              </a>
+              
+              LinkedIn post URL (optional) — uncomment and set href
+              <a class="news-link news-link-linkedin" href="https://www.linkedin.com/posts/XXXX" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                View LinkedIn Post
+              </a>
+              
+            </div>
+          </div>
+        </article>
+        ============================================================
+      -->
+<div aria-label="News items in reverse chronological order" class="news-timeline" role="list">
+<!-- ============================================================
+             NEWS ITEM 1 — July 2026
+             ============================================================ -->
+<!-- ============================================================
+             NEWS ITEM 2 — June 2026
+             ============================================================ -->
+<!-- ============================================================
+             NEWS ITEM 3 — 2026 (month unverified)
+             ============================================================ -->
+<!-- ============================================================
+             NEWS ITEM 4 — December 2025
+             ============================================================ -->
+<!-- ============================================================
+             NEWS ITEM 5 — 2025 (FALCON acceptance, month unverified)
+             ============================================================ -->
+<!-- ============================================================
+             NEWS ITEM 6 — 2025 (CryptoMamba, month unverified)
+             ============================================================ -->
+<!-- ============================================================
+             NEWS ITEM 7 — 2025 (LLM Routing, month unverified)
+             ============================================================ -->
+<!-- ============================================================
+             NEWS ITEM 8 — 2025 (Qualcomm Fellowship, month unverified)
+             ============================================================ -->
+<!-- ============================================================
+             NEWS ITEM 9 — December 2024
+             ============================================================ -->
+<article class="news-item" data-date="2026-08" role="listitem"><div class="news-item-inner"><div class="news-item-header"><time class="news-date" datetime="2026-08">August 2026</time><span class="news-category">Fellowship</span></div><h2 class="news-headline">Selected as a 2026 Capital One Fellow</h2><p class="news-body">Selected for the Capital One Fellowship through the USC Capital One Center for Responsible AI and Decision-Making in Finance (CREDIF), recognizing graduate research at the intersection of artificial intelligence and engineering.</p><div class="news-links news-links-inline"><a class="news-link news-link-inline" href="https://credif.usc.edu/" rel="noopener noreferrer" target="_blank">CREDIF</a></div></div></article><article class="news-item" data-date="2026-07" role="listitem">
+<div class="news-item-inner">
+<div class="news-item-header">
+<time class="news-date" datetime="2026-07">July 2026</time>
+<span class="news-category">Publication</span>
+</div>
+<h2 class="news-headline">LANTERN Published in Nature Portfolio</h2><p class="news-body">A machine-learning benchmarking framework for lipid nanoparticle transfection efficiency prediction, published in Communications AI &amp; Computing, a Nature Portfolio journal.</p>
+<div class="news-links news-links-inline"><a class="news-link news-link-inline" href="publications/lantern.html">Project</a><a class="news-link news-link-inline" href="https://arxiv.org/abs/2507.03209" rel="noopener noreferrer" target="_blank">Paper</a><a class="news-link news-link-inline" href="https://doi.org/10.1038/s44488-026-00007-x" rel="noopener noreferrer" target="_blank">DOI</a><a class="news-link news-link-inline" href="https://github.com/AsalMehradfar/LANTERN" rel="noopener noreferrer" target="_blank">Code</a></div>
+</div>
+</article><article class="news-item" data-date="2026-06" role="listitem">
+<div class="news-item-inner">
+<div class="news-item-header">
+<time class="news-date" datetime="2026-06">June 2026</time>
+<span class="news-category">Presentation</span>
+</div>
+<h2 class="news-headline">ATHENA Presented at the CVPR ViSCALE Workshop</h2><p class="news-body">A test-time steering framework for improving count fidelity in diffusion models, presented at the Test-Time Scaling for Computer Vision (ViSCALE) Workshop held in conjunction with the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2026.</p>
+<div class="news-links news-links-inline"><a class="news-link news-link-inline" href="publications/athena.html">Project</a><a class="news-link news-link-inline" href="https://arxiv.org/abs/2603.19676" rel="noopener noreferrer" target="_blank">Paper</a><a class="news-link news-link-inline" href="https://github.com/MShahabSepehri/ATHENA" rel="noopener noreferrer" target="_blank">Code</a></div>
+</div>
+</article><article class="news-item" data-date="2026-01" role="listitem">
+<div class="news-item-inner">
+<div class="news-item-header">
+<time class="news-date" datetime="2026-01">January 2026</time>
+<span class="news-category">Publication</span>
+</div>
+<h2 class="news-headline">EM-Aware Physical Synthesis Accepted to IEEE ISCAS 2026</h2><p class="news-body">An electromagnetics-aware physical synthesis framework for RF integrated circuits, accepted to the IEEE International Symposium on Circuits and Systems (ISCAS) 2026.</p>
+<div class="news-links news-links-inline"><a class="news-link news-link-inline" href="publications/em-aware-physical-synthesis.html">Project</a><a class="news-link news-link-inline" href="https://arxiv.org/abs/2602.11461" rel="noopener noreferrer" target="_blank">Paper</a><a class="news-link news-link-inline" href="https://github.com/AsalMehradfar/InductorModeling" rel="noopener noreferrer" target="_blank">Code</a></div>
+</div>
+</article><article class="news-item" data-date="2025-12" role="listitem">
+<div class="news-item-inner">
+<div class="news-item-header">
+<time class="news-date" datetime="2025-12">December 2025</time>
+<span class="news-category">Presentation</span>
+</div>
+<h2 class="news-headline">FALCON Presented at NeurIPS 2025</h2><p class="news-body">A machine-learning framework for fully automated layout-constrained analog circuit design, presented at the Thirty-Ninth Annual Conference on Neural Information Processing Systems (NeurIPS 2025).</p>
+<div class="news-links news-links-inline"><a class="news-link news-link-inline" href="publications/falcon.html">Project</a><a class="news-link news-link-inline" href="https://arxiv.org/abs/2505.21923" rel="noopener noreferrer" target="_blank">Paper</a><a class="news-link news-link-inline" href="https://github.com/AsalMehradfar/FALCON" rel="noopener noreferrer" target="_blank">Code</a></div>
+</div>
+</article><article class="news-item" data-date="2025-09" role="listitem">
+<div class="news-item-inner">
+<div class="news-item-header">
+<time class="news-date" datetime="2025-09">September 2025</time>
+<span class="news-category">Publication</span>
+</div>
+<h2 class="news-headline">FALCON Accepted to NeurIPS 2025</h2><p class="news-body">A machine-learning framework for fully automated layout-constrained analog circuit design, accepted to the Thirty-Ninth Annual Conference on Neural Information Processing Systems (NeurIPS 2025).</p>
+<div class="news-links news-links-inline"><a class="news-link news-link-inline" href="publications/falcon.html">Project</a><a class="news-link news-link-inline" href="https://arxiv.org/abs/2505.21923" rel="noopener noreferrer" target="_blank">Paper</a><a class="news-link news-link-inline" href="https://github.com/AsalMehradfar/FALCON" rel="noopener noreferrer" target="_blank">Code</a></div>
+</div>
+</article><article class="news-item" data-date="2025-07" role="listitem">
+<div class="news-item-inner">
+<div class="news-item-header">
+<time class="news-date" datetime="2025-07">July 2025</time>
+<span class="news-category">Presentation</span>
+</div>
+<h2 class="news-headline">LLM Routing Presented at an ICML 2025 Workshop</h2><p class="news-body">An uncertainty-aware framework for efficient large language model routing, presented at the Collaborative and Federated Agentic Workflows Workshop held in conjunction with the International Conference on Machine Learning (ICML) 2025.</p>
+<div class="news-links news-links-inline"><a class="news-link news-link-inline" href="publications/llm-routing.html">Project</a><a class="news-link news-link-inline" href="https://arxiv.org/abs/2502.01293" target="_blank">Paper</a></div>
+</div>
+</article><article class="news-item" data-date="2025-06" role="listitem"><div class="news-item-inner"><div class="news-item-header"><time class="news-date" datetime="2025-06">June 2025</time><span class="news-category">Conference</span></div><h2 class="news-headline">Attended CVPR 2025 in Nashville</h2><p class="news-body">Attended the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2025 in Nashville, Tennessee, to engage with recent advances in computer vision and machine learning.</p></div></article><article class="news-item" data-date="2025-05" role="listitem">
+<div class="news-item-inner">
+<div class="news-item-header">
+<time class="news-date" datetime="2025-05">June 2025</time>
+<span class="news-category">Presentation</span>
+</div>
+<h2 class="news-headline">CryptoMamba Presented at IEEE ICBC 2025</h2><p class="news-body">A state-space-model framework for Bitcoin price prediction, presented at the IEEE International Conference on Blockchain and Cryptocurrency (ICBC) 2025.</p>
+<div class="news-links news-links-inline"><a class="news-link news-link-inline" href="publications/cryptomamba.html">Project</a><a class="news-link news-link-inline" href="https://arxiv.org/abs/2501.01010" rel="noopener noreferrer" target="_blank">Paper</a><a class="news-link news-link-inline" href="https://github.com/MShahabSepehri/CryptoMamba" rel="noopener noreferrer" target="_blank">Code</a></div>
+</div>
+</article><article class="news-item" data-date="2025-02" role="listitem">
+<div class="news-item-inner">
+<div class="news-item-header">
+<time class="news-date" datetime="2025-02">February 2025</time>
+<span class="news-category">Recognition</span>
+</div>
+<h2 class="news-headline">Selected as a Qualcomm Innovation Fellowship Finalist</h2><p class="news-body">Selected as a finalist for the Qualcomm Innovation Fellowship, recognizing outstanding graduate research in engineering and applied sciences.</p>
+<!-- No external link for this item -->
+<!-- LinkedIn post URL (optional) — uncomment and set href when available
+            <div class="news-links">
+              <a class="news-link news-link-linkedin" href="https://www.linkedin.com/posts/XXXX" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                View LinkedIn Post
+              </a>
+            </div>
+            -->
+</div>
+</article><article class="news-item" data-date="2024-12" role="listitem">
+<div class="news-item-inner">
+<div class="news-item-header">
+<time class="news-date" datetime="2024-12">December 2024</time>
+<span class="news-category">Award</span>
+</div>
+<h2 class="news-headline">AICircuit Received the NeurIPS Workshop Reproducibility Award</h2><p class="news-body">The AICircuit benchmark received the Reproducibility Award at the Machine Learning and the Physical Sciences Workshop held in conjunction with NeurIPS 2024.</p>
+<div class="news-links news-links-inline"><a class="news-link news-link-inline" href="publications/aicircuit.html">Project</a><a class="news-link news-link-inline" href="https://arxiv.org/abs/2407.18272" rel="noopener noreferrer" target="_blank">Paper</a><a class="news-link news-link-inline" href="https://github.com/AvestimehrResearchGroup/AICircuit" rel="noopener noreferrer" target="_blank">Code</a></div>
+</div>
+</article><article class="news-item" data-date="2024-10" role="listitem"><div class="news-item-inner"><div class="news-item-header"><time class="news-date" datetime="2024-10">September 2024</time><span class="news-category">Publication</span></div><h2 class="news-headline">AICircuit Accepted to the NeurIPS ML for Physical Sciences Workshop</h2><p class="news-body">A multi-level dataset and benchmark for AI-driven analog integrated circuit design, accepted to the Machine Learning and the Physical Sciences Workshop held in conjunction with NeurIPS 2024.</p><div class="news-links news-links-inline"><a class="news-link news-link-inline" href="publications/aicircuit.html">Project</a><a class="news-link news-link-inline" href="https://arxiv.org/abs/2407.18272" rel="noopener noreferrer" target="_blank">Paper</a><a class="news-link news-link-inline" href="https://github.com/AvestimehrResearchGroup/AICircuit" rel="noopener noreferrer" target="_blank">Code</a></div></div></article></div><!-- /news-timeline -->
+</section>
+</main>
+<!-- ===================== FOOTER ===================== -->
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+    /* Theme toggle */
+    (function() {
+      var btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+      var html = document.documentElement;
+      function applyTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      var stored = localStorage.getItem('theme');
+      var preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      applyTheme(preferred);
+      btn.addEventListener('click', function() {
+        applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+    })();
+
+    /* Mobile hamburger */
+    (function() {
+      var hamburger = document.getElementById('nav-hamburger');
+      var mobileNav = document.getElementById('nav-mobile');
+      var closeBtn  = document.getElementById('nav-mobile-close');
+      if (!hamburger || !mobileNav) return;
+      function openMenu() {
+        mobileNav.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        if (closeBtn) closeBtn.focus();
+      }
+      function closeMenu() {
+        mobileNav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        hamburger.focus();
+      }
+      hamburger.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      mobileNav.addEventListener('click', function(e) { if (e.target === mobileNav) closeMenu(); });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileNav.classList.contains('open')) closeMenu();
+      });
+      mobileNav.querySelectorAll('a').forEach(function(link) { link.addEventListener('click', closeMenu); });
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && mobileNav.classList.contains('open')) closeMenu();
+      });
+    })();
+
+    /* Dynamic copyright year */
+    (function() {
+      var el = document.getElementById('footer-year');
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+  </script>
+<site-footer></site-footer><script defer="True" src="assets/js/shared-layout.js"></script></body>
+</html>
