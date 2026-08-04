@@ -822,6 +822,63 @@
     min-height: 0 !important;
   }
 }
+</style><style data-experience-darkmode-fix="true">
+/* ============================================================
+   EXPERIENCE CARDS — DARK MODE
+   Keeps the light-mode design intact while replacing hard-coded
+   white gradients with theme-aware dark surfaces.
+   ============================================================ */
+
+[data-theme="dark"] #education .edu-card--refined,
+[data-theme="dark"] .skills-card {
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--color-bg-card) 96%, var(--color-accent) 4%),
+      color-mix(in srgb, var(--color-bg-card) 92%, var(--color-bg-alt) 8%)
+    ) !important;
+  border-color: var(--color-border) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+[data-theme="dark"] #education .edu-card--refined:hover,
+[data-theme="dark"] .skills-card:hover {
+  border-color: var(--color-accent) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+[data-theme="dark"] #education .edu-card__degree,
+[data-theme="dark"] .skills-card__title {
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] #education .edu-card__institution {
+  color: var(--color-accent) !important;
+}
+
+[data-theme="dark"] #education .edu-card__meta {
+  border-top-color: var(--color-border-light, var(--color-border)) !important;
+}
+
+[data-theme="dark"] #education .edu-card__location {
+  color: var(--color-text-muted) !important;
+}
+
+[data-theme="dark"] #education .edu-card__years,
+[data-theme="dark"] .skill-tag {
+  background: var(--color-accent-light) !important;
+  color: var(--color-accent) !important;
+  border-color: color-mix(in srgb, var(--color-accent) 34%, transparent) !important;
+}
+
+[data-theme="dark"] #education .edu-card--refined::before,
+[data-theme="dark"] .skills-card::before {
+  background: linear-gradient(
+    180deg,
+    var(--color-accent),
+    color-mix(in srgb, var(--color-accent) 34%, transparent)
+  ) !important;
+}
 </style></head>
 <body><site-header></site-header>
 <!-- Skip to main content (accessibility) -->
